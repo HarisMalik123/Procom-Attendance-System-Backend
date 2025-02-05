@@ -8,9 +8,9 @@ export const verify = async (req, res) => {
     const currentTime = new Date();
     const event = await Event.findOne({
       "registeredTeams.team_code": teamcode,
-      eventStartTime: { $lte: currentTime },
-      eventEndTime: { $gte: currentTime },
+      
     })
+  // console.log(event)
     if (!event) {
       return res
         .status(400)
